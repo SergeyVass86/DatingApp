@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DatinApp.API.Data;
 using DatinApp.API.Dtos;
+using DatinApp.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatinApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
